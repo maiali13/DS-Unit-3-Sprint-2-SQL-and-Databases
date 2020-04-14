@@ -100,7 +100,7 @@ print(cursor.execute(query10).fetchall())
 
 # On average, how many Items does each Character have?
 query11 = """
-SELECT AVG(item_count) AS avg_items_per_char
+SELECT ROUND(AVG(item_count), 2) AS avg_items_per_char
 FROM (SELECT DISTINCT character_id AS character_id,
 COUNT(character_id) AS item_count
 FROM charactercreator_character_inventory
@@ -112,7 +112,7 @@ print(cursor.execute(query11).fetchall()[0])
 
 # On average, how many Weapons does each character have?
 query12 = """
-SELECT AVG(weapon_count) AS avg_weapons_per_char
+SELECT ROUND(AVG(weapon_count), 2) AS avg_weapons_per_char
 FROM (SELECT DISTINCT character_id AS character_id,
 COUNT(character_id) AS weapon_count
 FROM charactercreator_character_inventory

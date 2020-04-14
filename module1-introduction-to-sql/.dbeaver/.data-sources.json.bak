@@ -12,30 +12,6 @@
 				"database": "/home/mai/Desktop/DS-Unit-3-Sprint-2-SQL-and-Databases/module1-introduction-to-sql/rpg_db.sqlite3",
 				"url": "jdbc:sqlite:/home/mai/Desktop/DS-Unit-3-Sprint-2-SQL-and-Databases/module1-introduction-to-sql/rpg_db.sqlite3",
 				"type": "dev",
-				"auth-model": "native"
-			}
-		},
-		"postgres-jdbc-1717ab8ad56-2c7d66122c71ad0f": {
-			"provider": "postgresql",
-			"driver": "postgres-jdbc",
-			"name": "PostgreSQL - qutqveht",
-			"save-password": true,
-			"navigator-show-only-entities": true,
-			"navigator-hide-folders": true,
-			"navigator-hide-virtual": true,
-			"read-only": false,
-			"configuration": {
-				"host": "drona.db.elephantsql.com",
-				"port": "5432",
-				"database": "qutqveht",
-				"url": "jdbc:postgresql://drona.db.elephantsql.com:5432/qutqveht",
-				"type": "dev",
-				"provider-properties": {
-					"@dbeaver-show-non-default-db@": "false",
-					"@dbeaver-show-template-db@": "false",
-					"postgresql.dd.plain.string": "false",
-					"postgresql.dd.tag.string": "false"
-				},
 				"auth-model": "native",
 				"handlers": {}
 			}
