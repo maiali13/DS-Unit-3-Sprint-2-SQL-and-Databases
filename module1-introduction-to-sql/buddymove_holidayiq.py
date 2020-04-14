@@ -43,5 +43,5 @@ print("Number of users with over 100 reviews in nature and shopping", q1[0])
 
 # Close all connections and cursors
 conn.commit()
-curs.close()
+cursor.close()
 conn.close()
