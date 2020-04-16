@@ -1,4 +1,4 @@
-#
+# insert_titanic.py 
 import psycopg2
 import os
 import sqlite3
@@ -33,8 +33,9 @@ ti_curs = ti_conn.cursor()
 titanic = ti_curs.execute('SELECT * FROM titanic').fetchall()
 ti_conn.commit()
 
+# edit to drop if preexisting table
 create_titanic_table = """
-CREATE TABLE IF NOT EXSISTS titanic (
+CREATE TABLE IF NOT EXISTS titanic (
     titanic_id SERIAL PRIMARY KEY,
     survived INT,
     pclass INT,
@@ -54,8 +55,8 @@ query = '''
 SELECT AVG(age)
 FROM titanic
 '''
-cursor.execute(query)
-
+q = cursor.execute(query)
+print()
 ​
 # ACTUALLY SAVE THE TRANSACTIONS
 # if creating tables or inserting data (changing db)
