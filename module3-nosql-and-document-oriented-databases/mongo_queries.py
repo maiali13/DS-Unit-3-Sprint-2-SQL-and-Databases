@@ -43,7 +43,9 @@ print("----------------")
 print("COLLECTIONS:")
 print(db.list_collection_names()) # won't see until after inserting data
 ​
-conn = sqlite3.connect('rpg_db.sqlite3')
+# note:look more into os.path 
+RPG_FPATH = os.path.join(os.getcwd(),'..','module1-introduction-to-sql','rpg_db.sqlite3')
+conn = sqlite3.connect(RPG_FPATH)
 curs = conn.cursor()
 
 
