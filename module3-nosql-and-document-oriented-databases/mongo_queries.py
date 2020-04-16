@@ -10,8 +10,11 @@ load_dotenv()
 
 """
 Q: How was working with MongoDB different from working with PostgreSQL? What was easier, and what was harder?
-A:
-
+A: Mongo stores data in dictionaries/documents vs PostreSQL stores data in
+relational databases. So MongoDB is more flexible and the data isnt in a
+rigid strucutre like PostgreSQL. I like PostgreSQL because the standerdized data
+structure is better for long-term development and I prefer traditional SQL
+querying over dealing with json.
 """
 ​
 DB_USER = os.getenv("MONGO_USER", default="OOPS")
@@ -48,6 +51,23 @@ query = """
 SELECT (*)
 FROM charactercreator_character;
 """
-q = curs.execute(query).fetchall()
+q1 = curs.execute(query).fetchall()
 
+for character in q1:
+    insert_character = {
+        'character_id': character[0],
+        'name': character[1],
+        'level': character[2],
+        'exp': character[3],
+        'hp': character[4],
+        'strength': character[5],
+        'intelligence': character[6],
+        'dexterity': character[7],
+        'wisdom': character[8]
+    }
+    db.charactercreator_character.insert_one(insert_character)
+
+q2 = db.charactercreator_character.find_one()
+
+print(q2)
 curs.close()
